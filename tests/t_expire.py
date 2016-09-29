@@ -20,6 +20,10 @@ class UnitTest(unittest.TestCase):
 
         self.LARGE_KEY_LEN = 8000
 
+    def tearDown(self):
+        self.kt_http_handle.close()
+        self.kt_bin_handle.close()
+
     def test_set_expire(self):
         self.assertTrue(self.kt_http_handle.clear())
 

@@ -35,6 +35,10 @@ class UnitTest(unittest.TestCase):
                                                         custom_packer=CustomPacker())
         self.kt_http_handle.open(port=11978)
 
+    def tearDown(self):
+        self.kt_bin_handle.close()
+        self.kt_http_handle.close()
+
     def test_packer_bytes(self):
         self.assertTrue(self.kt_http_handle.clear())
         self.assertEqual(self.kt_http_handle.count(), 0)

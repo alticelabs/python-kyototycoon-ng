@@ -20,6 +20,10 @@ class UnitTest(unittest.TestCase):
         self.kt_bin_handle = KyotoTycoon(binary=True)
         self.kt_bin_handle.open(port=11978)
 
+    def tearDown(self):
+        self.kt_http_handle.close()
+        self.kt_bin_handle.close()
+
     def test_play_script(self):
         self.assertTrue(self.kt_http_handle.clear())
         self.assertEqual(self.kt_http_handle.count(), 0)

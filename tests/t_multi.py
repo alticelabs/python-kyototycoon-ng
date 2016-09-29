@@ -27,6 +27,10 @@ class UnitTest(unittest.TestCase):
 
         self.LARGE_KEY_LEN = 8000
 
+    def tearDown(self):
+        self.kt_handle_http.close()
+        self.kt_handle_bin.close()
+
     def clear_all(self):
         self.assertTrue(self.kt_handle_http.clear(db=DB_1))
         self.assertTrue(self.kt_handle_http.clear(db=DB_2))

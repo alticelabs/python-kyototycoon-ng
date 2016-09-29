@@ -14,6 +14,9 @@ class UnitTest(unittest.TestCase):
         self.kt_handle = KyotoTycoon()
         self.kt_handle.open(port=11978)
 
+    def tearDown(self):
+        self.kt_handle.close()
+
     def test_tsv_rpc(self):
         key = 'tabbed\tkey'
         value = 'tabs\tin\tvalue'
