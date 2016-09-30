@@ -141,6 +141,29 @@ Or, you can install the latest stable release from PyPI::
     pip install python-kyototycoon-ng
 
 
+RUNNING TESTS
+-------------
+To run tests, you need to start a Kyoto Tycoon server on port ``11978``
+with two databases ``one`` and ``two``::
+
+    # Runnig Kyoto Tycoon server as daemon
+    # See http://alticelabs.github.io/kyoto/kyototycoon/doc/command.html#ktserver for more info
+    /usr/local/bin/ktserver \
+        -host 127.0.0.1 \
+        -port 11978 \
+        -pid your-kyoto-folder/kyoto.pid \
+        -log your-kyoto-folder/ktserver.log \
+        -oat \
+        -dmn \  # Set as daemon
+        your-kyoto-folder/db/one.kct \
+        your-kyoto-folder/db/two.kct
+
+
+Then run python file ``tests/t_all.py``::
+
+    python tests/t_all.py
+
+
 AUTHORS
 -------
   * Carlos Rodrigues <cefrodrigues@gmail.com> (current maintainer)
