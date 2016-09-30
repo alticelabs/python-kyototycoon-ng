@@ -154,7 +154,7 @@ with two databases ``one`` and ``two``::
         -pid your-kyoto-folder/kyoto.pid \
         -log your-kyoto-folder/ktserver.log \
         -oat \
-        -dmn \  # Set as daemon
+        -dmn \
         your-kyoto-folder/db/one.kct \
         your-kyoto-folder/db/two.kct
 
